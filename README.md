@@ -5,7 +5,7 @@
 > **Course:** CMPT416 – Introduction to Cybersecurity  
 > **Professor:** Dominick Foti  
 > **Date:** May 14, 2026  
-> **Author:** [Your Name]  
+> **Author:** Mac Lama 
 > **Target:** Metasploitable 2 (`192.168.159.131`)  
 > **Attacker:** Kali Linux (`192.168.159.129`)
 
@@ -187,7 +187,10 @@ run
 [*] Meterpreter session 1 opened (192.168.159.129:4444 → 192.168.159.131:522)
 ```
 
-> 📸 *[Insert exploitation screenshot here]*
+![Kali Ping](https://github.com/user-attachments/assets/89e6ee6b-25a9-4504-a593-4e3546496c86)
+![Metasploitable Ping](https://github.com/user-attachments/assets/94df04f8-ed61-48f9-a549-513caf1d8dc9)
+
+
 
 ### Step 5 — Confirm Root Access
 
