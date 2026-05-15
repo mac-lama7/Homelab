@@ -62,7 +62,8 @@ ping -c 4 192.168.159.131
 ping -c 4 192.168.159.132
 ```
 
-> 📸 *[Insert ping screenshots here]*
+![Kali Ping](https://github.com/user-attachments/assets/89e6ee6b-25a9-4504-a593-4e3546496c86)
+![Metasploitable Ping](https://github.com/user-attachments/assets/94df04f8-ed61-48f9-a549-513caf1d8dc9)
 
 ---
 
@@ -187,8 +188,8 @@ run
 [*] Meterpreter session 1 opened (192.168.159.129:4444 → 192.168.159.131:522)
 ```
 
-![Kali Ping](https://github.com/user-attachments/assets/89e6ee6b-25a9-4504-a593-4e3546496c86)
-![Metasploitable Ping](https://github.com/user-attachments/assets/94df04f8-ed61-48f9-a549-513caf1d8dc9)
+📸 [Insert exploitation screenshot here]
+
 
 
 
