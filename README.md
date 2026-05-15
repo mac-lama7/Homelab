@@ -107,7 +107,8 @@ PORT     STATE  SERVICE     VERSION
 OS details: Linux 2.6.9 - 2.6.33
 ```
 
-> 📸 *[Insert nmap screenshot here]*
+![nmap scan](https://github.com/user-attachments/assets/f61d8c7f-e642-400d-bcdb-91ba5a87ad790)
+
 
 The scan immediately flagged **vsftpd 2.3.4** on port 21 — a version with a well-known, critical supply-chain backdoor.
 
