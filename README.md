@@ -35,6 +35,8 @@ The home lab was built using **VMware Workstation Pro** with three virtual machi
 | Metasploitable 2 | Target / defense box | `192.168.159.131` | Host-only (VMnet1) only |
 | Services VM | Additional services | `192.168.159.132` | Host-only (VMnet1) only |
 
+> **Note:** After encountering persistent networking and compatibility issues with Metasploitable 3, I switched to Metasploitable 2 (professor's recommendation). 
+
 ### Additional Services (Objective 4)
 
 The Services VM hosts two additional services:
@@ -42,8 +44,7 @@ The Services VM hosts two additional services:
 - 🤖 **Ollama** — a locally hosted AI agent running the `llama3.2:1b` language model
 - 📧 **Modoboa** — a full-featured open-source email server with a web interface, accessible via browser at `http://mail.mail-services-vm.local`
 
-> **Note:** After encountering persistent networking and compatibility issues with Metasploitable 3, I switched to Metasploitable 2 (professor's recommendation). 
----
+\---
 
 ## 🗺️ Network Diagram
 
