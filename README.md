@@ -15,11 +15,11 @@
 
 1. [Lab Environment](#-lab-environment)
 2. [Network Diagram](#-network-diagram)
-3. [Reconnaissance — nmap Scan](#-reconnaissance--nmap-scan)
+3. [Reconnaissance (Nmap Scan)](#-reconnaissance--nmap-scan)
 4. [Vulnerability Analysis](#-vulnerability-analysis)
 5. [Exploitation Walkthrough](#-exploitation-walkthrough)
 6. [Defense & Remediation](#-defense--remediation)
-7. [Verification — Exploit Confirmation Failed](#-verification--exploit-confirmation-failed)
+7. [Verification (Exploit Confirmation Failed)](#-verification--exploit-confirmation-failed)
 8. [Conclusion](#-conclusion)
 9. [References](#-references)
 
