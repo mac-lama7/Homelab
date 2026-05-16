@@ -189,7 +189,7 @@ run
 [*] Meterpreter session 1 opened (192.168.159.129:4444 → 192.168.159.131:522)
 ```
 
-📸 [Insert exploitation screenshot here]
+![exploitation](<img width="622" height="112" alt="Metasploitable Exploitation" src="https://github.com/user-attachments/assets/840736b7-108d-4c1e-97de-f210648f59ae" />)
 
 
 
@@ -206,7 +206,7 @@ id
 uid=0(root) gid=0(root)
 ```
 
-> 📸 *[Insert uid=0 screenshot here]*
+![Root Access](<img width="223" height="81" alt="Root Access" src="https://github.com/user-attachments/assets/8c840b47-d8a9-4566-8a68-9d26a4f29c45" />)
 
 | Field | Value |
 |---|---|
@@ -271,7 +271,7 @@ run
 [*] Exploit completed, but no session was created.
 ```
 
-> 📸 *[Insert failed exploit screenshot here]*
+![Defense](<img width="1046" height="197" alt="Metasploitable Defended" src="https://github.com/user-attachments/assets/8c0f08cf-3003-4186-9089-2d06d3f0b9ee" />)
 
 The connection timed out and no session was created. **The patch was successful.**
 
