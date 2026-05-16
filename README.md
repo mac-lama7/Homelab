@@ -4,7 +4,7 @@
 
 > **Course:** CMPT416 – Introduction to Cybersecurity  
 > **Professor:** Dominick Foti  
-> **Date:** May 14, 2026  
+> **Date:** May 15, 2026  
 > **Author:** Mac Lama 
 > **Target:** Metasploitable 2 (`192.168.159.131`)  
 > **Attacker:** Kali Linux (`192.168.159.129`)
@@ -42,8 +42,7 @@ The Services VM hosts two additional services:
 - 🤖 **Ollama** — a locally hosted AI agent running the `llama3.2:1b` language model
 - 📧 **Modoboa** — a full-featured open-source email server with a web interface, accessible via browser at `http://mail.mail-services-vm.local`
 
-> **Note:** The project instructions recommended Metasploitable 3 as the target. After encountering persistent networking and compatibility issues — a known problem with this VM — the switch to Metasploitable 2 was made on the professor's recommendation. Metasploitable 2 contains the same vsftpd 2.3.4 vulnerability and provides an equivalent learning experience.
-
+> **Note:** After encountering persistent networking and compatibility issues with Metasploitable 3, I switched to Metasploitable 2 (professor's recommendation). 
 ---
 
 ## 🗺️ Network Diagram
@@ -90,7 +89,7 @@ Nmap scan report for 192.168.159.131
 Host is up (0.00097s latency).
 
 PORT     STATE  SERVICE     VERSION
-21/tcp   open   ftp         vsftpd 2.3.4        ← ⚠️ VULNERABLE
+21/tcp   open   ftp         vsftpd 2.3.4        ← ⚠️ VULNERABILITY
 22/tcp   open   ssh         OpenSSH 4.7p1
 23/tcp   open   telnet      Linux telnetd
 25/tcp   open   smtp        Postfix smtpd
@@ -110,7 +109,7 @@ OS details: Linux 2.6.9 - 2.6.33
 ![nmap scan](https://github.com/user-attachments/assets/f61d8c7f-e642-400d-bcdb-91ba5a87ad790)
 
 
-The scan immediately flagged **vsftpd 2.3.4** on port 21 — a version with a well-known, critical supply-chain backdoor.
+The scan immediately flagged **vsftpd 2.3.4** on port 21, which has a critical supply-chain backdoor.
 
 ---
 
@@ -142,7 +141,7 @@ If this vulnerability were exploited in a production environment, an attacker wi
 - 👤 Create hidden backdoor accounts for future re-entry
 - 🕵️ Operate completely undetected without forensic investigation
 
-This is a **supply chain attack** — the malicious code was embedded in the official download, meaning victims had no way to protect themselves through normal patching practices.
+This is a **supply chain attack**  where the malicious code was embedded in the official download, meaning victims had no way to protect themselves through normal patching practices.
 
 ---
 
@@ -245,7 +244,7 @@ sudo iptables -A OUTPUT -p tcp --sport 21 -j DROP
 | `INPUT --dport 21 -j DROP` | Drops all incoming TCP connections to port 21 |
 | `OUTPUT --sport 21 -j DROP` | Drops all outgoing responses from port 21 |
 
-Together, these rules make port 21 completely unreachable — no client can initiate a connection, and even if a packet slips through, the server won't respond.
+Together, these rules make port 21 completely unreachable. No client can initiate a connection, and even if a packet slips through, the server won't respond.
 
 ### Environmental Impact
 
@@ -287,7 +286,7 @@ This penetration test demonstrated the full lifecycle of a security engagement:
 4. 🛡️ **Remediation** — iptables rules blocked port 21
 5. ✅ **Verification** — Exploit confirmed non-functional after patching
 
-The vsftpd 2.3.4 backdoor is a stark reminder of the dangers of supply chain attacks. A single compromised download can grant root access to any attacker who reaches the affected port. This exercise also highlights core security principles: **keep software updated**, **monitor open ports**, and **expose only what is necessary**.
+The vsftpd 2.3.4 backdoor is one of many examples of the dangers of supply chain attacks. A single compromised download can grant root access to any attacker who reaches the affected port. This exercise also highlights core security principles: **keep software updated**, **monitor open ports**, and **expose only what is necessary**.
 
 ---
 
@@ -295,12 +294,11 @@ The vsftpd 2.3.4 backdoor is a stark reminder of the dangers of supply chain att
 
 1. [CVE-2011-2523 — National Vulnerability Database (NVD)](https://nvd.nist.gov/vuln/detail/CVE-2011-2523)
 2. [Rapid7 — vsftpd_234_backdoor Metasploit Module](https://www.rapid7.com/db/modules/exploit/unix/ftp/vsftpd_234_backdoor/)
-3. [Exploit-DB — vsftpd 2.3.4 Backdoor Command Execution (#49757)](https://www.exploit-db.com/exploits/49757)
-4. [CVE Details — CVE-2011-2523](https://www.cvedetails.com/cve/CVE-2011-2523/)
-5. [Nmap Documentation](https://nmap.org/docs.html)
-6. [Nmap ftp-vsftpd-backdoor NSE Script](https://nmap.org/nsedoc/scripts/ftp-vsftpd-backdoor.html)
-7. [Metasploit Framework Documentation](https://docs.metasploit.com/)
-8. [iptables Manual — linux.die.net](https://linux.die.net/man/8/iptables)
+3. [CVE Details — CVE-2011-2523](https://www.cvedetails.com/cve/CVE-2011-2523/)
+4. [Nmap Documentation](https://nmap.org/docs.html)
+5. [Nmap ftp-vsftpd-backdoor NSE Script](https://nmap.org/nsedoc/scripts/ftp-vsftpd-backdoor.html)
+6. [Metasploit Framework Documentation](https://docs.metasploit.com/)
+7. [iptables Manual — linux.die.net](https://linux.die.net/man/8/iptables)
 
 ---
 
